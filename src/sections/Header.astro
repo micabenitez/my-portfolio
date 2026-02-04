@@ -1,0 +1,74 @@
+---
+const navLinks = [
+    { href: "#sobre-mi", label: "Sobre mí" },
+    { href: "#skills", label: "Skills" },
+  { href: "#proyectos", label: "Proyectos" },
+  { href: "#contacto", label: "Contacto" },
+];
+---
+
+<header class="sticky top-0 z-50 w-full md:fixed md:top-6 md:left-1/2 md:-translate-x-1/2 md:max-w-3xl md:px-4">
+  <div class="relative group">
+    <div class="hidden md:block absolute -inset-1 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
+
+    <div class="relative flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#0f0518]/95 backdrop-blur-xl md:px-4 md:py-2 md:rounded-full md:border md:bg-white/3 md:shadow-2xl md:group-hover:border-white/10 md:group-hover:bg-white/5">
+      <nav class="hidden md:block">
+        <ul class="flex items-center gap-1">
+          {navLinks.map((link) => (
+            <li>
+              <a href={link.href} class="px-3 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-gray-400 hover:text-white transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+  
+      <div class="hidden md:block w-px h-4 bg-white/10 ml-auto mr-4"></div>
+      
+      <a href="#" download class="flex items-center gap-2 px-4 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold text-white bg-white/5 border border-white/10 hover:bg-white hover:text-black transition-colors">
+        <span class="hidden sm:inline">Descargar CV</span>
+        <span class="sm:hidden">CV</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </a>
+
+      <button id="menu-toggle" class="md:hidden text-white p-2 ml-4 hover:bg-white/10 rounded-full transition-colors" aria-label="Abrir menú">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#0f0518]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl md:rounded-2xl md:border md:border-white/5 md:mt-2">
+      <ul class="flex flex-col py-4">
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="block px-8 py-4 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors tracking-widest uppercase">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+</script>
