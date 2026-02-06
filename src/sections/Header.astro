@@ -1,4 +1,5 @@
 ---
+import '@fontsource/patrick-hand';
 const navLinks = [
     { href: "#sobre-mi", label: "Sobre mí" },
     { href: "#skills", label: "Skills" },
@@ -7,7 +8,7 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full md:fixed md:top-6 md:left-1/2 md:-translate-x-1/2 md:max-w-3xl md:px-4">
+<header class="sticky top-0 z-50 w-full md:fixed md:top-6 md:left-1/2 md:-translate-x-1/2 md:max-w-4xl md:px-4">
   <div class="relative group">
     <div class="hidden md:block absolute -inset-1 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
 
@@ -26,7 +27,7 @@ const navLinks = [
   
       <div class="hidden md:block w-px h-4 bg-white/10 ml-auto mr-4"></div>
       
-      <a href="#" download class="flex items-center gap-2 px-4 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold text-white bg-white/5 border border-white/10 hover:bg-white hover:text-black transition-colors">
+      <a href="#" download class="flex items-center gap-2 px-4 py-2 rounded-full text-xs uppercase tracking-[0.2em] font-extrabold text-[#423806] bg-amarillo border border-white/10 hover:bg-white hover:text-black transition-colors">
         <span class="hidden sm:inline">Descargar CV</span>
         <span class="sm:hidden">CV</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,6 +55,12 @@ const navLinks = [
     </div>
   </div>
 </header>
+
+<style>
+  a {
+    font-family: 'Patrick Hand', cursive;
+  }
+</style>
 
 <script>
     const menuToggle = document.getElementById('menu-toggle');

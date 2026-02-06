@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --background-image-fondo: radial-gradient(ellipse at top, #2e1065, #0f0518, #000000);
+  --background-image-fondo: linear-gradient(to bottom, #0f0518, #1a0b2e, #2d1b4e);
   --color-primary: #9333ea;
   --color-primary-hover: #7e22ce;
   --color-primary-light: #d8b4fe;
   --color-primary-dark: #581c87;
+  --color-amarillo: #FDE047;
 }
 
 @keyframes drift {

@@ -1,0 +1,76 @@
+---
+import '@fontsource/patrick-hand';
+
+const heroData = {
+  greeting: "Hola, soy",
+  name: "Micaela Benitez",
+  role: "Desarrolladora Fullstack",
+  description:
+    "Transformo ideas en soluciones web escalables y funcionales, combinando frontend y backend con código limpio y eficiente.",
+};
+---
+
+<section id="inicio" class="min-h-screen grid grid-cols-2 gap-6 mt-9 py-6 pl-10 mx-10 items-center justify-center">  
+  
+    <div class="flex flex-col text-white relative z-10 gap-3 ml-9">
+      <div class="mb-4 space-y-2.5">
+        <span class="text-amarillo font-bold text-3xl">{heroData.greeting}</span>
+        <h1 class="text-7xl text-pretty">{heroData.name}</h1>
+
+        
+        <div class="relative inline-block mt-2 w-fit">
+            <h2 class="text-xl md:text-2xl text-white font-mono z-10 relative px-4 py-1.5">
+              {heroData.role}
+            </h2>
+            <div class="absolute inset-0 bg-violet-600/40 -skew-x-6 transform rotate-1 rounded-xl z-0"></div>
+        </div>
+      </div>
+      
+      <p class="text-lg md:text-base text-gray-300 max-w-xl text-pretty leading-relaxed">
+        {heroData.description}
+      </p>
+
+      <div class="flex flex-wrap gap-4 mt-4">
+        <a href="#proyectos" class="text-xl bg-amarillo text-black  tracking-wider
+          font-bold px-8 py-3 rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(255,255,0,0.3)]">       
+            Ver Proyectos       
+        </a>
+
+        <a href="#contacto" class=" text-xl tracking-wide
+          group flex items-center gap-2 border-2 border-white/20 hover:border-white
+         text-white font-bold px-8 py-3 rounded-full hover:bg-white/5 transition-all duration-300"
+        >
+          Contacto
+          <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+        </a>
+      </div>
+
+    </div>
+ 
+    <div class="flex items-center justify-center order-1 md:order-2 relative">
+          <div class="absolute inset-0 bg-violet-600/20 blur-[100px] rounded-full z-0"></div>
+          
+          <img 
+              src="/hero-image1.png" 
+              alt="Micaela y su coding buddy" 
+              class="relative z-10 w-96 max-w-md h-auto object-contain"
+          />
+      </div>
+
+</section>
+
+
+<style>
+  /* Aplicamos Patrick Hand de forma global a los textos indicados */
+  h1, a {
+    font-family: 'Patrick Hand', cursive;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
+  }
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+</style>
